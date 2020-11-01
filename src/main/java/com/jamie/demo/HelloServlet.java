@@ -1,5 +1,6 @@
-package com.jamie.simpleframework;
+package com.jamie.demo;
 
+import com.jamie.demo.entity.bo.HeadLine;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.servlet.ServletException;
@@ -17,11 +18,29 @@ import java.io.IOException;
 public class HelloServlet extends HttpServlet {
 
     @Override
+    public void init() {
+        System.out.println("初始化Servlet");
+    }
+
+    @Override
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("是我执行了doGet方法，我才是入口");
+        doGet(req, resp);
+    }
+
+    @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String name = "我的简易框架";
         log.debug("name is " + name);
         req.setAttribute("name", name);
         req.getRequestDispatcher("/WEB-INF/jsp/hello.jsp").forward(req, resp);
+        HeadLine headLine = new HeadLine();
+        headLine.setLineId(1L);
+    }
+
+    @Override
+    public void destroy() {
+        System.out.println("销毁Servlet");
     }
 
 }
