@@ -21,10 +21,10 @@ public class BeanContainerTest {
     @Order(1)
     @Test
     public void loadBeansTest() {
-        Assertions.assertEquals(false, beanContainer.isLoaded());
+        Assertions.assertFalse(beanContainer.isLoaded());
         beanContainer.loadBeans("com.jamie.demo");
         Assertions.assertEquals(6, beanContainer.size());
-        Assertions.assertEquals(true, beanContainer.isLoaded());
+        Assertions.assertTrue(beanContainer.isLoaded());
     }
 
     @DisplayName("根据类获取其实例：getBeanTest")
@@ -32,16 +32,16 @@ public class BeanContainerTest {
     @Test
     public void getBeanTest() {
         MainPageController controller = (MainPageController)beanContainer.getBean(MainPageController.class);
-        Assertions.assertEquals(true, controller instanceof MainPageController);
+        Assertions.assertNotNull(controller);
         DispatcherServlet dispatcherServlet = (DispatcherServlet)beanContainer.getBean(DispatcherServlet.class);
-        Assertions.assertEquals(null, dispatcherServlet);
+        Assertions.assertNull(dispatcherServlet);
     }
 
     @DisplayName("根据注解获取对应的实例：getClassesByAnnotationTest")
     @Order(3)
     @Test
     public void getClassesByAnnotationTest() {
-        Assertions.assertEquals(true, beanContainer.isLoaded());
+        Assertions.assertTrue(beanContainer.isLoaded());
         Assertions.assertEquals(3, beanContainer.getClassesByAnnotation(Controller.class).size());
     }
 
@@ -49,9 +49,9 @@ public class BeanContainerTest {
     @Order(4)
     @Test
     public void getClassesBySuperTest() {
-        Assertions.assertEquals(true, beanContainer.isLoaded());
-        Assertions.assertEquals(true, beanContainer.getClassesBySuper(HeadLineService.class)
-                                                   .contains(HeadLineServiceImpl.class));
+        Assertions.assertTrue(beanContainer.isLoaded());
+        Assertions.assertTrue(beanContainer.getClassesBySuper(HeadLineService.class)
+                                           .contains(HeadLineServiceImpl.class));
     }
 
 }
