@@ -3,9 +3,11 @@ package com.jamie.demo.service.solo.impl;
 import com.jamie.demo.entity.bo.ShopCategory;
 import com.jamie.demo.entity.dto.Result;
 import com.jamie.demo.service.solo.ShopCategoryService;
+import com.jamie.simpleframework.core.annotation.Service;
 
 import java.util.List;
 
+@Service
 public class ShopCategoryServiceImpl implements ShopCategoryService {
 
     @Override
@@ -29,7 +31,8 @@ public class ShopCategoryServiceImpl implements ShopCategoryService {
     }
 
     @Override
-    public Result<List<ShopCategory>> queryShopCategory(ShopCategory shopCategoryCondition, int pageIndex, int pageSize) {
+    public Result<List<ShopCategory>> queryShopCategory(ShopCategory shopCategoryCondition, int pageIndex,
+                                                        int pageSize) {
         return null;
     }
 

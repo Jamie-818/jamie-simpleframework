@@ -5,7 +5,9 @@ import com.jamie.demo.entity.dto.Result;
 import com.jamie.demo.service.combine.HeadLineShopCategoryCombineService;
 import com.jamie.demo.service.solo.HeadLineService;
 import com.jamie.demo.service.solo.ShopCategoryService;
+import com.jamie.simpleframework.core.annotation.Service;
 
+@Service
 public class HeadLineShopCategoryCombineServiceImpl implements HeadLineShopCategoryCombineService {
 
     private HeadLineService headLineService;

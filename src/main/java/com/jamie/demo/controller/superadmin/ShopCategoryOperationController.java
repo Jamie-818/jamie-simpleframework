@@ -3,11 +3,13 @@ package com.jamie.demo.controller.superadmin;
 import com.jamie.demo.entity.bo.ShopCategory;
 import com.jamie.demo.entity.dto.Result;
 import com.jamie.demo.service.solo.ShopCategoryService;
+import com.jamie.simpleframework.core.annotation.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
+@Controller
 public class ShopCategoryOperationController {
 
     private ShopCategoryService shopCategoryService;

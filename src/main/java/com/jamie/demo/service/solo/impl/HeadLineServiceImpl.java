@@ -3,9 +3,10 @@ package com.jamie.demo.service.solo.impl;
 import com.jamie.demo.entity.bo.HeadLine;
 import com.jamie.demo.entity.dto.Result;
 import com.jamie.demo.service.solo.HeadLineService;
+import com.jamie.simpleframework.core.annotation.Service;
 
 import java.util.List;
-
+@Service
 public class HeadLineServiceImpl implements HeadLineService {
 
     public static final String PATH = "/super-admin/head-line-operation";

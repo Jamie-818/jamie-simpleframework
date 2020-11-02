@@ -3,17 +3,19 @@ package com.jamie.demo.controller.superadmin;
 import com.jamie.demo.entity.bo.HeadLine;
 import com.jamie.demo.entity.dto.Result;
 import com.jamie.demo.service.solo.HeadLineService;
+import com.jamie.simpleframework.core.annotation.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
+@Controller
 public class HeadLineOperationController {
 
     private HeadLineService headLineService;
 
     public void addHeadLine(String lineName, String lineLink, String lineImg, Integer priority) {
-//        HeadLine headLine = new HeadLine();
+        //        HeadLine headLine = new HeadLine();
         //        headLine.setLineName(lineName);
         //        headLine.setLineLink(lineLink);
         //        headLine.setLineImg(lineImg);
