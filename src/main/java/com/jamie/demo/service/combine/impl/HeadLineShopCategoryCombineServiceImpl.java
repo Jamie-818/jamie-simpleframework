@@ -6,12 +6,15 @@ import com.jamie.demo.service.combine.HeadLineShopCategoryCombineService;
 import com.jamie.demo.service.solo.HeadLineService;
 import com.jamie.demo.service.solo.ShopCategoryService;
 import com.jamie.simpleframework.core.annotation.Service;
+import com.jamie.simpleframework.inject.annotation.Autowired;
 
 @Service
 public class HeadLineShopCategoryCombineServiceImpl implements HeadLineShopCategoryCombineService {
 
+    @Autowired
     private HeadLineService headLineService;
 
+    @Autowired
     private ShopCategoryService shopCategoryService;
 
     @Override
